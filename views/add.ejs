@@ -1,0 +1,72 @@
+<%- include('com/header') %>
+  <div class="child-mid">
+    <div class="add">
+        <form class="add-form" method="post">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">姓名：</span>
+            <input type="text" class="form-control" id="name" placeholder="请输入用户名" >
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">年龄：</span>
+            <input type="text" class="form-control" id="age" placeholder="请输入年龄">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">城市：</span>
+            <input type="text" class="form-control" id="city" placeholder="请输入城市">
+          </div>
+          <div class="input-group">
+            <buttom type="button" class="btn btn-success">提交</buttom>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+</div>
+</body>
+<script>
+  $(function(){
+    var name = '',age = 0, city = '';
+    $('.btn-success').click(function(){
+      name = $('#name').val();
+      age = $('#age').val();
+      city = $('#city').val();
+      if (!name) {
+        alert('请输入姓名')
+        return
+      }
+      if (!age) {
+        alert('请输入年龄')
+        return
+      }
+      if (!city) {
+        alert('请输入城市')
+        return
+      }
+      insertTable(name,age,city)
+    })
+    function insertTable (name,age,city) {
+      $.ajax({
+        url: "/add",
+        type: "POST",
+        cache: false,
+        dataType: 'json',
+        data: {
+          name: name,
+          age: age,
+          city: city,
+        },
+        success: function(data){
+          if (data.code === 0) {
+            alert('提交成功！')
+          } else {
+            alert('提交失败！')
+          }
+        },
+        error: function(){
+          alert('error')
+        },
+      })
+    }
+  })
+</script>
+<%- include('com/footer')  %>

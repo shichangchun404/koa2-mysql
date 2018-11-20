@@ -1,0 +1,43 @@
+{
+  "name": "koa2-mysql",
+  "version": "1.0.0",
+  "description": "node-koa2-mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "dev",
+    "dev": "supervisor --harmony index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shichangchun404/koa2-mysql.git"
+  },
+  "keywords": [
+    "koa2"
+  ],
+  "author": "shichangchun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shichangchun404/koa2-mysql/issues"
+  },
+  "homepage": "https://github.com/shichangchun404/koa2-mysql#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "ejs": "^2.6.1",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-mysql-session": "0.0.2",
+    "koa-router": "^7.4.0",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static": "^5.0.0",
+    "koa-static-cache": "^5.1.2",
+    "koa-views": "^6.1.4",
+    "markdown-it": "^8.4.2",
+    "md5": "^2.2.1",
+    "mocha": "^5.2.0",
+    "moment": "^2.22.2",
+    "mysql": "^2.16.0"
+  },
+  "dependencies": {
+    "mysql-pro": "^1.0.1"
+  }
+}
