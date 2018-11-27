@@ -15,6 +15,8 @@ use table_name
 show tables;
 desc table_name
 
+select * from tbl_students;
+
 npm i supervisor -g
 supervisor的作用是会监听文件的变化，而我们修改文件之后不必去重启程序
 supervisor --harmony index

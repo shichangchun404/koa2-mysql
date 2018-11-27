@@ -5,7 +5,7 @@
           <li>
             <a><%= item.name %></a>
             <p>Hello, my name is <%= item.name %>, i am <%= item.age%> years old, i am from <%= item.city%></p>
-            <buttom type="button" class="btn btn-danger">删除</buttom>
+            <buttom type="button" class="btn btn-danger btn-del" data-id="<%= item.id %>" data-name="<%= item.name %>">删除</buttom>
           </li>
         <% }) %>
       </ul>
@@ -13,5 +13,28 @@
   </div>
 </div>
 </body>
-
+<script>
+  $(function(){
+    $(".btn-del").on('click',function(){
+      let id = $(this).attr('data-id')
+      let name = $(this).attr('data-name')
+      let result = confirm(`确定删除${name}?`)
+      if (result) {
+        $.ajax({
+          url: '/del',
+          data:{id:id},
+          type: "POST",
+          success: function () {
+            alert('删除成功')
+            window.location.href='http://localhost:3000/'
+          },
+          error: function () {
+            alert('删除失败')
+          }
+        })
+      }
+    })
+      
+  })
+</script>
 <%- include('com/footer')  %>

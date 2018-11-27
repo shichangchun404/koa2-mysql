@@ -43,6 +43,7 @@ app.use(bodyParser({
 //  路由
 app.use(require('./routers/index.js').routes())
 app.use(require('./routers/add.js').routes())
+app.use(require('./routers/del.js').routes())
 
 
 
