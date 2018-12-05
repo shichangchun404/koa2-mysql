@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const fs = require('fs')
 const path = require('path')
 const bodyParser = require('koa-bodyparser')
 const ejs = require('ejs')
@@ -41,10 +42,17 @@ app.use(bodyParser({
 }))
 
 //  路由
-app.use(require('./routers/index.js').routes())
-app.use(require('./routers/add.js').routes())
-app.use(require('./routers/del.js').routes())
+// app.use(require('./routers/index.js').routes())
+// app.use(require('./routers/add.js').routes())
+// app.use(require('./routers/del.js').routes())
+// app.use(require('./routers/demo.js').routes())
 
+const main = ctx => {
+  console.log(ctx.request)
+  ctx.response.type = 'html'
+  ctx.response.body = fs.createReadStream('./views/demo/demo1.html')
+}
+app.use(main)
 
 
 app.listen(config.port)
