@@ -8,7 +8,7 @@ mysql -u root -p
 进入MySQL的bin目录，然后输入mysql -u root -p，输入密码
 然后依次输入
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'password' PASSWORD EXPIRE NEVER; (修改加密规则 )
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; (更新用户密码)
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; (更新用户密码) 
 
 show databases;
 use table_name
